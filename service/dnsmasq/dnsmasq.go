@@ -13,7 +13,7 @@ import (
 func New(c *model.Params) model.Service {
 	return model.Service{
 		Config: container.Config{
-			Image: "andyshinn/dnsmasq:2.83",
+			Image: "tobybellwood/dnsmasq:multiarch",
 			Cmd: []string{
 				"-A",
 				fmt.Sprintf("/%s/127.0.0.1", c.Domain),
