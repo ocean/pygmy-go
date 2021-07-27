@@ -15,7 +15,7 @@ import (
 func New() model.Service {
 	return model.Service{
 		Config: container.Config{
-			Image: "amazeeio/ssh-agent",
+			Image: "tobybellwood/ssh-agent:multiarch",
 			Labels: map[string]string{
 				"pygmy.defaults": "true",
 				"pygmy.enable":   "true",
