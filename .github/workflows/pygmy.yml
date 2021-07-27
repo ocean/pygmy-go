@@ -83,6 +83,10 @@ jobs:
           ./pygmy-go-linux-amd64 --config examples/pygmy.basic.yml status;
           ./pygmy-go-linux-amd64 --config examples/pygmy.basic.yml version;
 
+      - name: Show pygmy image versions
+        run: |
+          docker ps -a --filter "label=pygmy.name"
+
       - name: Test the amazeeio-network for expected results
         run: |
           docker network inspect amazeeio-network | jq '.[].Name' | grep "amazeeio-network";
