@@ -15,6 +15,7 @@ func New(c *model.Params) model.Service {
 		Config: container.Config{
 			Image: "tobybellwood/dnsmasq:multiarch",
 			Cmd: []string{
+				"--log-facility=-",
 				"-A",
 				fmt.Sprintf("/%s/127.0.0.1", c.Domain),
 			},
